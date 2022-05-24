@@ -2,6 +2,12 @@
 
 ## Getting Started
 
+Install the app
+
+```bash
+npm install
+```
+
 First, run the development server:
 
 ```bash
