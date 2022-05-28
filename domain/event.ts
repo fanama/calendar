@@ -5,4 +5,5 @@ export interface Evenenent {
     duration: number;
     hours: number;
     minutes: number;
+    hoursEnd: number;
 }

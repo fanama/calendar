@@ -18,7 +18,8 @@ export function useCalendar() {
         for (k in day) {
             console.log({ k });
             for (const event of events) {
-                if (k == 'h' + event.hours) {
+                if (k == 'h' + event.hours || k == 'h' + `${event.hoursEnd}`) {
+                    console.log(event);
                     day[k].push(event);
                 }
             }

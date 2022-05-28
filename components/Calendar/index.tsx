@@ -11,7 +11,7 @@ export function Calendar() {
             className="grid bg-gray-600 h-full w-full"
             style={{
                 gridTemplateRows: 'repeat(12,auto)',
-                gridTemplateColumns: '10% repeat(5,auto)',
+                gridTemplateColumns: '10% repeat(6,auto)',
             }}
         >
             {Object.values(day).map((events: Evenenent[], i) => (

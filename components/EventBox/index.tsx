@@ -8,14 +8,17 @@ interface Props {
 }
 
 export function EventBox({ event, len, index }: Props) {
+    const colStart = index + 2;
+    const colEnd = index + 3;
+    const hourStart = event.hours - 8;
+    const hourEnd = event.hoursEnd - 8;
+
     return (
         <div
             className={`p-1 bg-gray-300 text-color-white flex border border-solid flex-row justify-between `}
             style={{
-                gridColumn: len == 0 ? `${index + 2}/span 3` : index + 2,
-                gridRow: `${event.hours - 8}/${
-                    event.hours + event.duration / 60 - 8
-                }`,
+                gridColumn: len <= 1 ? `${colStart}/-1` : `${colStart}`,
+                gridRow: `${hourStart}/${hourEnd}`,
             }}
             onClick={() => {
                 console.log({ len, index });
