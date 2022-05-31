@@ -8,7 +8,12 @@ export function getEvents(): Evenenent[] {
             ...e,
             indice: 0,
             hours: parseInt(hourString),
-            hoursEnd: parseInt(hourString) + e.duration / 60,
+            hoursEnd:
+                parseInt(hourString) +
+                Math.trunc(
+                    parseInt(`${parseFloat(minutesString) / 60}`) +
+                        e.duration / 60
+                ),
             minutes: parseInt(minutesString),
         };
     });

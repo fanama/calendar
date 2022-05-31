@@ -9,7 +9,7 @@ interface Props {
 
 export function EventBox({ event, len, index }: Props) {
     const colStart = index + 2;
-    const colEnd = index + 3;
+    // const colEnd = index + 3;
     const hourStart = event.hours - 8;
     const hourEnd = event.hoursEnd - 8;
 
@@ -17,6 +17,7 @@ export function EventBox({ event, len, index }: Props) {
         <div
             className={`p-1 bg-gray-300 text-color-white flex border border-solid flex-row justify-between `}
             style={{
+                zIndex: event.duration / 60,
                 gridColumn: len <= 1 ? `${colStart}/-1` : `${colStart}`,
                 gridRow: `${hourStart}/${hourEnd}`,
             }}

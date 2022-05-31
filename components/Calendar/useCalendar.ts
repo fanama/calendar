@@ -16,11 +16,11 @@ export function useCalendar() {
 
         let k: keyof Day;
         for (k in day) {
-            console.log({ k });
             for (const event of events) {
-                if (k == 'h' + event.hours || k == 'h' + `${event.hoursEnd}`) {
-                    console.log(event);
-                    day[k].push(event);
+                if (k == 'h' + event.hours) {
+                    if (!day[k].some((e) => e == event)) {
+                        day[k] = [...day[k], event];
+                    }
                 }
             }
 
